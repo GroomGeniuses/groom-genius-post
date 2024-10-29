@@ -4,6 +4,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.example.dto.PostBoardDTO;
 import org.example.dto.PostDTO;
+import org.example.entitiy.Post;
 import org.example.service.PostService;
 import org.springframework.web.bind.annotation.*;
 
@@ -43,25 +44,25 @@ public class PostController {
         return postService.getPostBoard(page, pageSize);
     }
 
-//    @GetMapping("post/{postId}")
-//    public PostDTO getPostByPostId(@PathVariable String postId) throws Exception {
-//        return postService.getPostByPostId(postId);
-//    }
+    @GetMapping("post/{postId}")
+    public PostDTO getPostByPostId(@PathVariable String postId) throws Exception {
+        return postService.getPostByPostId(postId);
+    }
 
-//    @PostMapping("post")
-//    public String createPost(@RequestBody PostDTO postDTO) {
-//        Post createdPost = postService.createPost(postDTO);
-//        return createdPost.getPostId();
-//    }
+    @PostMapping("post")
+    public String createPost(@RequestBody PostDTO postDTO) {
+        Post createdPost = postService.createPost(postDTO);
+        return createdPost.getPostId();
+    }
 
-//    @PutMapping("post/{postId}")
-//    public void updatePost(@PathVariable String postId, @RequestBody PostDTO postDTO) {
-//        Post updatePost = postService.updatePost(postId, postDTO);
-//    }
+    @PutMapping("post/{postId}")
+    public void updatePost(@PathVariable String postId, @RequestBody PostDTO postDTO) {
+        Post updatePost = postService.updatePost(postId, postDTO);
+    }
 
-//    @DeleteMapping("post/{postId}")
-//    public void deletePost(@PathVariable String postId) {
-//        postService.deletePost(postId);
-//    }
+    @DeleteMapping("post/{postId}")
+    public void deletePost(@PathVariable String postId) {
+        postService.deletePost(postId);
+    }
 
 }

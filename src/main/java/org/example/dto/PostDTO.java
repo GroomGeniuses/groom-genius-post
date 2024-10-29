@@ -7,7 +7,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.Date;
-import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -34,6 +33,9 @@ public class PostDTO {
 
     // 관심 수
     private int interests;
+
+    // 지원자 수
+    private int applicants;
 
     private String content;
 
